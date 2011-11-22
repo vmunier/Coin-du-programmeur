@@ -1,0 +1,190 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head><title>Livres</title></head>
+  <body class="lift:content_id=main">
+    <div id="main" class="lift:surround?with=default;at=content">
+
+      <!-- (UTILISER MYLYN peut aider) -->
+
+      <h2>Raccourcis Eclipse</h2>
+
+      Le fichier contenant les définitions de vos raccourcis Eclipse s'appelle
+      org.eclipse.ui.workbench.prefs et devrait se trouver dans
+      workspace/.metadata/.plugins/org.eclipse.core.runtime/.settings/ <br />
+      <br />
+      Pour utiliser les raccourcis d'un autre programmeur, il suffit
+      de remplacer votre fichier org.eclipse.ui.workbench.prefs par le sien. <br />
+      <br />
+      
+      <a href="">mon fichier de raccourcis
+        Eclipse</a> <br />
+      <br />
+      J'utilise le plugin Emacs+ sous Eclipse afin de profiter de nombreux
+      raccourcis Emacs que j'appréci particulièrement pour faire de "l'édition
+      brut" :<br />
+      les opérations comme supprimer une ligne, se déplacer de mots en mots font
+      parti de "l'édition brut" tandis que lancer tous les tests junit ou
+      trouver un fichier dans le workspace n'en font pas parti.
+      
+      <p> Pour l'édition brut, nous avons donc les raccourcis d'emacs.<br />
+        Pour tout le reste, nous gardons les raccourcis intégrés nativement dans
+        eclipse. </p>
+
+      Vous trouverez ci-dessous une présentation des raccourcis que je trouve
+      les plus utiles. <br />
+      La grande majorité sont les raccourcis définis par défaut
+      dans Eclipse. <br />
+      <br />
+      Tous les raccourcis écrits en rouge sont ceux que j'ai redéfinis
+      personnelement ou faisant parti d'Emacs+ . <br />
+      Il ne font donc pas parti des raccourcis natif d'Eclipse.<br />
+      Pour chaque raccourci redéfini, j'indiquerai le
+      raccourci d'origine pour exécuter la même commande.<br />
+      <br />
+
+      <h3>Les plus connus</h3>
+      <ul>
+        <li><b>Ctrl+1</b> quick-fix / spell-checker</li>
+        <li><b>Ctrl+Shift+O</b> organise les imports : supprimme les imports
+          inutilisés, ajoutte les manquants</li>
+        <li><b>Alt+/</b> complète le mot</li>
+        appuyez plusieurs fois d'affilé sur Alt+/ pour accèder aux autres complètions
+        <li><b>Ctrl+Shift+F</b> formate/indente le fichier source </li>
+        <li><b class="red">Alt+?</b> (<b>Ctrl+Espace</b> par défaut)
+          autocompletion</li>
+        Le fameux Ctrl+Espace que j'ai redéfini ^^ car je l'utilise déjà pour
+        avoir le même fonctionnement que sous Emacs, c'est à dire commencer une
+        marque.
+      </ul>
+
+      
+      <h3>Navigation</h3>
+      <ul>
+        <li><b>Alt+Gauche</b> revient en arrière dans l'historique de navigation
+          (je l'utilise pour revenir à l'endroit où j'ai fait un Ctrl+J)</li>
+        <li><b>Alt+Droite</b> pour naviguer en avant (l'inverse de
+          alt+gauche)</li>
+        <li><b>Alt+Haut/Bas</b> déplace la ligne courante (ou plusieurs
+          séléctionnées) en haut ou en bas</li>
+        <li><b>Ctrl+/</b> commente ou décommente la séléction ou la ligne
+          courante</li>
+        <li><b>Ctrl+.</b> positionne le curseur sur la prochaine erreur ou
+          avertissement</li>
+        <li><b>Ctrl+,</b> pour l'erreur précédente</li>
+        <li><b>Ctrl+Shift+P</b> saute jusqu'à l'accolade/parenthèse
+          correspondante</li>
+        <li><b>Ctrl+Alt+H</b> identifie tous les endroits où est appelée la
+        méthode dans laquelle on se trouve 
+        </li>
+        <li><b class="red">Ctrl+!</b> (<b>Ctrl+Alt+Shift+L</b> par défaut)
+          change de vue <br />
+          Étant sous linux, ce raccourcis par défaut me posait problème car 
+          Ctrl+Alt+L (qui est une suite très proche) verrouille la session.
+        </li>
+        <li><b class="red">Ctrl+J</b> (<b>F3</b> par défaut) J pour Jump, saute
+          à la séléction ou la déclaration se trouvant sous le curseur</li>
+      </ul>
+      
+      <h3>Refactoring</h3>
+      Fonctionne dans l'éditeur et dans le package explorer :
+      <ul>
+        <li><b>Alt+Shift+L</b> extrait le texte séléctioné et le place dans une
+          variable locale <br />
+          (ça détermine et écrit le type pour vous)(<b>L</b>ocal)</li>
+        <li><b>Alt+Shift+M</b> extrait le texte séléctioné et le place dans une
+          méthode (<b>M</b>ethod)</li>
+        <li><b>Alt+Shift+I</b> inline la méthode séléctionnée
+          (<b>I</b>nline)</li>
+        <li><b>Alt+Shift+R</b> renomme la séléction ou le nom sous le curseur
+          (<b>R</b>ename)</li>
+        <li><b>Alt+Shift+V</b> déplace la méthode ou le champ (mo<b>V</b>e)</li>
+        <li><b>Alt+Shift+T</b> accès au menu de refactoring
+          (refac<b>T</b>oring)</li>
+      </ul>      
+      <h3>Exécution</h3>
+      (e<b>X</b>ecute)<br />
+      <ul>
+        <li><b>Alt+Shift+X T</b> exécute les tests untaires du fichier
+          courant </li>
+        <li><b>Alt+Shift+X J</b> exécute le main du fichier courant </li>
+        <li><b>Alt+Shift+X R</b> exécute sur le serveur </li>
+      </ul>
+      <p>
+        Il y en a d'autres. Les options vous sont indiquées après avoir tapé
+        Alt+Shift+X.<br />
+        Alt+Shift+X peut être remplacé par <b>Alt+Shift+D</b> dans tous les
+        exemples du dessus pour éxécuter en mode debug.
+      </p>
+
+      <h3>Ouverture</h3> 
+      Cherche dans tous les projets ouvert :
+      <ul>
+        <li><b>Ctrl+Shift+T</b> ouvre le fichier contenant la classe dont on précise
+          le nom
+        </li>
+        <li><b class="red">Ctrl+X Ctrl+F</b> (<b>Ctrl+Shift+R</b> par défaut)
+          ouvre n'importe quel type de fichier en lui précisant son nom <br />
+          Je n'ai pas gardé le raccourci par défaut car Ctrl+X Ctrl+F est un
+          raccourcis Emacs auquel je suis habitué.
+        </li>
+      </ul>      
+      <p>
+        Les correspondances sont trouvées sur le début du nom de
+        classe/fichier.<br />
+        Vous pouvez commencer votre recherche avec un astérisque * pour
+        rechercher n'importe classe/fichier qui contient ce mot.
+      </p>
+
+      <h3>Génération</h3>
+      <ul>
+        <li><b>Alt+Shift+J</b> ajoute un commentaire javadoc </li>
+        <li><b>Alt+S R</b> génère les getters et setters</li>
+        <li><b>Alt+S V</b> insère les signatures de méthode pour les méthodes
+          surchargées depuis la superclass ou l'interface</li>
+      </ul>
+      
+      <h3>Menu</h3>
+
+      <ul>
+        <li><b>Alt+Shift+N</b> affiche la même chose que lorsque vous utilisez
+          la souris et cliquez sur File->New</li>
+        <li><b>Alt+N</b> ouvre l'assistant pour créer une classe Java <br />
+          <!--  ne dépend pas de l'environnement, donc pour créer une classe scala il faudra assigner un -->
+          <!-- autre raccourcis. -->
+          <!-- Dans preferences->general->keys : utiliser filter avec le mot clef "new" -->
+          <!-- pour accéder aux différents assistants. -->
+          Ensuite, maintenir Alt et pour chaque description de champ, une lettre est
+          soulignée par un underscore _ . <br />
+          C'est un indice pour taper le raccourci correspondant. <br />
+          Par exemple le 'e' de Browse... est souligné lorsqu'on appui sur Alt donc
+          Alt+E sert à ajouter une superclass. <br />
+          Alt+A pour une interface, le 'a' de Add... est souligné lorsqu'on appui
+          sur Alt etc...</li>
+      </ul>
+
+      Utile pour naviguer dans un menu, comme celui des getters et setters par
+      exemple :
+      <ul>
+        <li><b>Shift+Gauche/Droite</b> replie/déplie une liste</li>
+        <li><b>Espace</b> séléctionne, coche un choix</li>
+      </ul>
+
+      <div>
+        <form class="lift:form.ajax">
+          <input class="lift:ChatIn" id="chat_in"/>
+          <input type="submit" value="Say Something"/>
+        </form>
+      </div>
+      <div class="lift:comet?type=Chat"> 
+        <h3>Commentaires</h3>
+        <ul>
+          <li>A message</li>
+          <li class="clearable">Another message</li>
+          <li class="clearable">A third message</li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>
+

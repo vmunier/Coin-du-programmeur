@@ -1,0 +1,30 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head><title>Livres</title></head>
+  <body class="lift:content_id=main">
+    <div id="main" class="lift:surround?with=default;at=content">
+
+      <!-- (UTILISER MYLYN peut aider) -->
+
+      <h2>Fichier .bashrc</h2>
+      <!-- trouver comment faire des href vers des fichiers normaux dans Lift -->
+      <a href="/static/bashrc">.bashrc</a>
+      <div>
+        <form class="lift:form.ajax">
+          <input class="lift:ChatIn" id="chat_in"/>
+          <input type="submit" value="Say Something"/>
+        </form>
+      </div>
+      <div class="lift:comet?type=Chat"> 
+        <h3>Commentaires</h3>
+        <ul>
+          <li>A message</li>
+          <li class="clearable">Another message</li>
+          <li class="clearable">A third message</li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>
+

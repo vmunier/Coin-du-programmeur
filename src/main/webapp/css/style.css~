@@ -1,0 +1,6 @@
+.imgBook {
+  width: 500px;
+  height: 500px;
+}
+
+b.red{ color: red; }

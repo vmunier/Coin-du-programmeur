@@ -1,0 +1,155 @@
+# .bashrc
+
+# Source global definitions
+if [ -f /etc/bashrc ]; then
+	. /etc/bashrc
+fi
+
+# activer la complétion des commandes sudo
+. /etc/bash_completion
+
+# User specific aliases and functions
+#permet de spécifier la variable d'environnement LANG au caractère français
+LANG=fr_FR.UTF-8
+
+# ----------------------------------- alias ------------------------------------------
+# some more ls aliases
+alias ll='ls -l'
+alias la='ls -A'
+alias l='ls -CF'
+
+# Lance emacs avec une configuration allégé qui se trouve dans .emacs_light.el .
+# À la fin du .emacs_light.el se trouve deux commandes 
+# qui restituent le .emacs d'origine.
+# Faire attention à ne pas éditer .emacs ou .emacs_light.el avec em car il y aura 
+# conflit avant la sauvegarde par emacs et le déplacement de mv.
+alias em='mv ~/.emacs ~/.emacs_save_config; mv ~/.emacs_light.el ~/.emacs; emacs'
+
+# passer l'option color=always à grep pour afficher l'occurence trouvé en couleur
+# -i permet d'ignorer la casse
+alias grep='grep -i --color=always'
+
+# grep-find regexp (avec . pour répertoire par défaut) ou
+# grep-find dir regexp ou
+# grep-find dir name regexp
+function func-grep-find {
+  name="*"
+  dir="."
+  regexp=$1
+
+  if [ -n "$3" ] ; then
+   dir=$1
+   name=$2
+   regexp=$3      
+  elif [ -n "$2" ] ; then
+   dir=$1
+   regexp=$2
+  fi
+  find "$dir" -name "$name" -type f -print0 | xargs -0 -e grep -i --color=always -nH -e\
+ "$regexp"
+}
+alias grep-find='func-grep-find $1 $2 $3'
+
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+
+alias cp='cp -i'
+alias mv='mv -i'
+alias h='history'
+
+# va au dossier où on se trouvait avant.Exemple : on est dans ~ on fait cd Downloads.
+# cd - nous ramène dans ~ et un nouveau cd - nous ramène dans Downloads
+alias cd-='cd -'
+
+# raccourcis pour lancer et arrêter mysql
+alias mysql-start="sudo /opt/lampp/lampp start"
+alias mysql-stop="sudo /opt/lampp/lampp stop"
+
+# pour utiliser le mysql de lamp 
+alias sql="sudo /opt/lampp/lampp start; echo -e '\n-------> TAPEZ : use ma_base_de_donnees\n'; sudo /opt/lampp/bin/mysql"
+
+# Calendrier du mois avec le jour en cours en rouge:
+alias cal='var=$(/usr/bin/cal -m); echo "${var/$(date +%-d)/$(echo -e "\033[1;31m$(date +%-d)\033[0m")}"'
+
+# les 10 plus gros fichiers/répertoires du réperoitre en cours
+alias biggests='ls -A -Q | xargs du -sk | sort -rn | head -10'
+
+# pas évident de se souvenir des options tar, donc deux alias pour simplifier ça
+function ftar {
+  options="$1"
+  target="$2" 
+  archive=$target".tar.gz"
+  echo "tar '$options $archive $target'"
+  tar "$options" "$archive" "$target"
+}
+alias targz='ftar "-czvf" $1'
+alias tarbz2='tar "-cjvf" $1'
+alias untargz='tar -zxvf'
+alias untarbz2='tar -jxvf'
+
+# liste seulement les fichiers cachés
+alias l.='ls -d .[[:alnum:]]* 2> /dev/null || echo "No hidden files here..."'
+
+# affiche l'arborescence du répertoire courant
+# alias tree="find . | sed 's/[^/]*\//|   /g;s/| *\([^| ]\)/+--- \1/'"
+
+# Si nous faisons mkdir toto/titi
+# si toto n'existe pas, mkdir le créée avant de créer titi
+alias mkdir='mkdir -p'
+
+# créer une commande del qui permet de supprimer des éléments
+# de façon non définitive (contrairement à rm) et envoie ces éléments
+# dans la corbeille.
+alias del="mv -f -t ~/.local/share/Trash/files --backup=t"
+
+alias clean="del *~ *.aux *.log *.out *.toc *.nav *.snm *.vrb 2> /dev/null"
+
+# rld (diminutif de reload) pour recharger le ~/.bashrc
+alias rld=". ~/.bashrc"
+
+# Pour argouml
+alias argouml="java -jar ~/Bureau/argouml-0.30.2/argouml.jar"
+# ------------------------------- fonctions ------------------------------------------
+# Premier argument, le nombre de secondes qu'il s'écoule entre deux appels 
+# de la fonction; deuxième argument, la fonction.
+function repeat() {
+    local period
+    period=$1; shift;
+    while (true); do
+        eval "$@";
+    sleep $period;
+    done
+}
+
+
+# ---------------------------- variables d'environnement -----------------------------
+# utilitaires
+export PATH=~/utilitaires/:$PATH
+
+
+# Scala
+export TYPESAFE_HOME=~/typesafe-stack
+export PATH=$TYPESAFE_HOME:$TYPESAFE_HOME/bin:$PATH
+
+# scala REPL (Read-Eval-Print Loop)fox
+alias scala="$TYPESAFE_HOME/bin/scala -deprecation"
+
+# après avoir installé uniquement sqlplus, permet d'accèder aux librairies dynamiques
+# que requièrent sqlplus
+export LD_LIBRARY_PATH=/usr/lib/oracle/11.2/client/lib:$LD_LIBRARY_PATH
+
+
+# sqlplus oracle, il est important de définir la variable d'environnement
+# ORACLE_HOME et non de placer le chemin dans le path
+# PATH=/usr/lib/oracle/xe/app/oracle/product/10.2.0/server/bin:$PATH
+# export PATH
+# ORACLE_HOME=/usr/lib/oracle/xe/app/oracle/product/10.2.0/server
+# export ORACLE_HOME
+# ORACLE_SID=vincent
+# export ORACLE_SID
+
+export EDITOR=emacs
+
+# eclipse
+alias eclipse=~/eclipse/eclipse

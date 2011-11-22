@@ -1,0 +1,313 @@
+s<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+           "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head><title>Home</title></head>
+  <body class="lift:content_id=main">
+    <div id="main" class="lift:surround?with=default;at=content">
+      <!-- Ça serait bien d'afficher au visteur que les points
+           importants :       <h2>Minimiser le nombre de paramètres d'une fonction</h2>
+           <h2>Éviter les paramètres boolean</h2> afin que ça se présente
+           comme une liste de points importants. 
+           Dans le cas où il souhaite avoir plus d'information sur le
+           point, il pourrait cliquer dessus et ça fera défiler la description.
+           J'ai fini de décrire tous les points importants que je voulais énoncés.
+           Il reste à mettre en forme tous les points pour que le texte soit mieux
+           organisé et peut-être réecrire quelques points qui sont des répétitions de
+           "Coder proprement".
+           -->
+      <p>
+        Ce sont des règles que j'applique d'une manière général mais qu'il ne faut
+        pas suivre à la lettre lorsqu'elles n'ont pas de sens.<br />
+        Le bon sens prime !
+      </p>
+      <h2>Vocabulaire</h2>
+      <p>Un sous-programme peut-être une fonction ou une procédure.<br />
+        quand un sous-programme ne retourne rien (ie void) on l'appelle une procédure, <br />
+        quand il retourne quelque chose on l'appelle une fonction.<br />
+        <br />
+        Dans la suite, j'utiliserai les termes fonctions et méthodes sans
+        distinction même si elles en ont par définition.<br />
+        Si vous programmez dans un langage tel que le C où les méthodes et
+        classes n'existent pas, vous pouvez facilement considérez les méthodes
+        comme des fonctions et les classes comme des structure de données.<br />
+        <br />
+        Plusieurs des points ci-dessous sont inspirés des conseils donnés dans les
+        livres <strong>Tout sur le code</strong> et <strong>Coder proprement</strong>.
+      </p>
+      
+      <h2>Conseils généraux</h2>
+      <p>
+        Lisez du code bien écrit, lisez en beaucoup <br />
+        <br />
+        Inspirez vous de codes écrits par des programmeurs expérimentés pour
+        mieux écrire le votre.<br />
+        Observez la longueur des fonctions, retenez les noms qu'ils utilisent
+        pour leurs variables. <br />
+        <br />
+        Si vous utilisez un langage dont la bibliothèque standard est open
+        source, allez lire le code qu'elle renferme. 
+        Il est souvent de très bonne qualité.<br />
+        En lisant le code des bibliothèques de votre langage préféré, vous 
+        aurez des modèles de code bien écrit. De plus, vous comprendrez mieux
+        les fonctions que vous utilisez tous les jours.<br />
+        Par exemple, pour le langage Java, j'ai commencé en lisant le code des
+        collections ArrayList, HashMap..
+      </p>
+      <h2>Nommage</h2>
+      <p>
+        Trouver des noms descriptifs et à la fois succinct est une tâche
+        difficile.<br />
+        Vous devez faire l'effort de chercher des noms appropriés.<br />
+        Au début vous serez moins productif car vous passerez beaucoup de temps à
+        chercher. Mais à force d'entraînement, vous irai de plus en plus en vite
+        et votre travail sera récompensé d'un code plus facile à lire, à
+        comprendre et donc plus facile à utiliser et à mettre à jour.
+      </p>
+      <h3>Des noms descriptifs</h3>
+      <p>
+        <ul>
+          <li>
+            Plus un élément (variable, fonction, module...) est local, moins son nom a
+            de l'importance car il peut être plus facilement déduit de son
+            contexte.<br />
+            Plus un élément est global, plus son nom doit être explicite car il est
+            plus difficile de déduire son action du contexte.<br />
+            Ça ne veut pas dire qu'un nom explicite pour une variable local n'est pas
+            important mais plutôt qu'on peut se permettre de passer peu de temps à
+            nommer une variable qui ne sera utilisé que dans les 10 lignes suivants
+            sa déclaration.<br />
+            À l'inverse, il faudra passer plus de temps à nommer une
+            méthode qui peut potentiellement être appelée n'importe où dans le
+            projet.<br />
+            <br />
+          </li>
+          <li>
+            Un nom de variable court permet une lecture plus rapide et permet de
+            se concentrer sur la structure logique. <br />
+            Un nom plus long offre souvent une meilleur description.<br />
+            <br />
+            Une bonne longueur pour un nom varie grossièrement entre 6 et 16
+            charactères. <br />
+            Si vous trouvez dans votre code <strong>beaucoup</strong> de noms
+            qui sortent de ces limites, vous pouvez vous demandez si certains
+            sont assez clairs dans le cas où ils sont courts ou bien si d'autres
+            ne pourraient pas être raccourcis dans le cas opposé.
+          </li>
+        </ul>
+      </p>
+      <h3>Des noms prononçables</h3>
+      <p>
+        Évitez la codification ou des notations spécial comme la notation
+        hongroise.
+      </p>
+      <h3>La précision au début du nom</h3>
+      <p>
+        On lit de gauche à droite, on doit avoir l'information le plus tôt possible donc
+        le plus à gauche.<br />
+        Les noms LinkedList et ArrayList respectent cette règle.<br />
+        Nous aurions pu choisir ListLinked et ListArray qui ont une
+        qualité :<br />
+        ils offrent une belle symétrie et on s'aperçoit facilement qu'ils
+        font parti d'un même concept, tous les deux des List.<br />
+        Cependant, la réele information qui nous intéresse est de savoir si
+        c'est une liste chainée ou bien un tableau dynamique. La précision
+        doit donc se placer en tête du groupe nominal. <br />
+        Si nous avons besoin de plus d'informations alors nous lisons le
+        reste des mots sur la droite pour connaitre le contexte.<br />
+        <!-- Souvent il suffit d'écrire correctement puisque en aglais les -->
+        <!-- adjectifs se placent avant le nom.  -->
+      </p>
+      <h3>Groupe nomniaux pour les classes, verbe pour les méthodes</h3>
+      <p>
+        Les noms de classes doivent être des groupes nominaux (Warrior,
+        LinkedList).
+        Évitez les noms qui sont aussi des verbes pour nommer vos classes
+        (Play, Drink, Wash).<br />
+        Les noms de méthodes doivent commencer par un verbe à l'impératif
+        (getName, writeSentence). 
+      </p>
+      <h3>Un seul mot pour décrire la même chose</h3>
+      <p>
+        Lorsque nous lisons un mot déjà lu ailleurs, nous pouvons rapidement
+        faire mentalement le lien et comprendre de quoi il s'agit.<br />
+        Si vous manipulez une même instance de classe dans différentes
+        méthodes, essayez de donnez le même nom de paramètre pour ces
+        méthodes qui recevront l'instance.
+        <br /><br />
+        Aussi, évitez les synonymes comme start et begin ou encore burn et
+        fire.<br />
+        Si vous possèdez une méthode fire, utilisez ce nom partout dans le
+        reste du programme. <br />
+      </p>
+
+      <h2>Les fonctions</h2>
+      <h3>Les fonctions doivent être courtes</h3>
+      <p>
+        La première règle d'écriture d'une fonction est qu'elle doit être courte.<br />
+        La deuxième règle d'écriture d'une fonction  
+        <strong>est qu'elle doit être courte.</strong><br />
+
+        <!-- image du savon fight club, c'est important d'ajouter un peu de fun
+             dans un article :) -->
+        <img src="images/fight.club.jpeg" />
+        <br />
+        La longueur d'une fonction varie d'un langage de programmation à l'autre.<br />
+        En C, nous éviterons d'avoir des fonctions de plus de 60 lignes, tandis
+        qu'en Java ça sera 30 et en python 20.
+      </p>
+      <h3>Une fonction doit contenir des instructions du même niveau
+        d'abstraction</h3>
+      <p>
+        Une même fonction ne doit pas contenir à la fois un appel de haut niveau comme
+        launchGame() et un appel de bas niveau comme "abc".substring(2,3) .<br />
+        Les détails de l'implémentation doivent être isolés dans leur propre
+        fonction.<br />
+        Plus on descend dans les appels de fonctions plus on s'approche des
+        concepts de bas niveaux.
+      </p>
+      <h3>Indicateurs pour extraire du code et créer une nouvelle fonction</h3>
+      <p>
+        <ul>
+          <li>vous observez des lignes de code redondantes</li>
+          <li>la fonction possède un niveau d'imbrication supérieur à 2 (par
+            exemple trois if imbriqués)</li>
+          <li>la fonction est décomposée en sections, comme déclarations,
+            initialisations, actions. Une fonction ne faisant qu'une seule chose ne
+            peut pas être décomposée en sections.</li>
+          <li>une fonction contient plus de 3 variables locales.</li>
+        </ul>
+      </p>
+      <h2>Paramètres de fonctions</h2>
+      <h3>Minimiser le nombre de paramètres d'une fonction</h3>      
+      <p>Une fonction ayant peu de paramètres est plus facile à utiliser qu'une
+        fonction qui en possède beaucoup.<br />
+        <br />
+        Le must est d'utiliser des fonctions qui ne prennent aucun argument. <br />
+        Viennent ensuite les fonctions à un argument puis à deux arguments.<br />
+        Les fonctions recevant trois arguments ou plus doivent avoir une bonne
+        raison d'exister.<br />
+        <br />
+        Comparaison de deux signatures :<br />
+        new Circle(double x, double y, double radius)<br />
+        new Circle(Point center, double radius) <br />
+        <br />
+        La deuxième déclaration est préférable à la première.<br />
+        x et y doivent être liés dans une classe Point. <br />
+      </p>
+      <h3>Techniques pour diminuer le nombre de paramètres de méthodes :</h3>
+      <p>
+        <ul>
+          <li>Passer des paramètres au constructeur qui seront stockés en variable de
+            classe</li>
+          <li>Créer une classe pour regrouper les variables faisant parti d'un
+            même concept</li>
+        </ul>
+      </p>
+      <h3>Éviter les paramètres boolean</h3>
+      <p>
+        Un paramètre boolean complique inutilement la signature d'une méthode et
+        proclame à l'environnement extérieur qu'elle fait deux choses :<br />
+        La méthode réalise une chose lorsque l'argument vaut true, une autre
+        lorsqu'il vaut false.<br />
+        Il est préférable de remplacer cette fonction en deux sous-programmes qui
+        ne prennent pas de paramètre boolean :<br />
+        l'un correspond au bloc du if (true) et l'autre au else.<br />
+        Ces deux sous-programmes sont maintenant appelées par l'appelant de la
+        méthode initial.
+      </p>
+
+      <h3>Les variables d'une classe doivent être utilisées dans le maximum de
+        méthodes</h3>
+      <p>
+        Si une variable de classe n'est utilisée que dans quelques méthodes, il y
+        a de forte chance pour qu'elles doivent être réunis dans une autre classe.
+      </p>
+      <h2>Les commentaires</h2>
+      <h3>Les commentaires doivent apporter une réelle information</h3>
+      <p>
+        Les commentaires doivent être utilisés pour décrire ce qu'il est difficile
+        d'exprimer uniquement avec du code.<br />
+        Ils doivent être utilisés pour exprimer des choix, des intentions.<br />
+        <br />
+        <ul>
+          <li> Les commentaires ne doivent surtout pas répéter ce que dit le code</li>
+          <li>Les commentaires encombrent le code</li>
+          <li>Seul le code lui-même dit la vérité</li>
+          <li>Sauf si vous écrivez une API publique, ne surtout pas rajouter des
+            commentaires redondants juste pour générer une javadoc complète. </li>
+          <li>Un commentaire obsolète est une plaie qui ment et désinforme le
+            programmeur</li>
+        </ul>
+      </p>
+      
+      <h2>Traitement des erreurs</h2>
+      <p>
+        Il est très important que le code soit robuste.
+        Ce n'est pas une raison pour rendre illisible le reste du code.<br />
+        Le code de traitement des erreurs doit être séparé de la logique.<br />
+        Autant que possible, les lignes décrivant la logique ne doivent pas être
+        entrelacées de tests d'erreurs 
+        <!-- (pex : if (key == null) logger.debug("The key should not be null") ) -->.<br />
+        Les exceptions permettent de gérer ce problème plus facilement.
+      </p>
+      <h2>Mise en forme</h2>
+      <h3>méthodes appelantes placées au dessus des méthodes appelées</h3>
+      positionnement des méthodes dans une classe :
+      <ul>
+        <li>Les méthodes appelantes doivent être placées au dessus des méthodes
+          appelées
+          <!-- C'est tout l'inverse des habitudes d'un programmeur C. -->
+        </li>
+        <li>
+          La méthode appelée doit être placée le plus proche possible de son
+          premier appel
+        </li>
+      </ul>
+      Bien sûr, ce n'est pas toujours possible. Par exemple, dans le cas où deux
+      méthodes s'appellent mutuellement .<br />
+      Cette règle de mise en forme n'est pas importante mais j'essai de la
+      respecter car elle apporte un confort de lecture.<br />
+      On lis l'enchainement des appels d'une méthode du haut vers le bas,
+      des concepts de haut niveau vers les détails de l'implémentation.<br />
+      <p>
+        public V get(Object key) {<br />
+        <!--    &nbsp; : non breackable space  -->
+        &nbsp;&nbsp; if (key == null)<br />
+        &nbsp;&nbsp;&nbsp;&nbsp; return getForNullKey();<br />
+        &nbsp;&nbsp; Entry&lt;K,V&gt; e = table[indexFor(hash, table.length)]<br />
+        &nbsp;&nbsp; return e.value<br />
+        }<br />
+        <br />
+        private V getForNullKey() {<br />
+        ...<br />
+        }<br />
+        <br />
+        public V getDefault {<br />
+        &nbsp;&nbsp; return getForNullKey <br />
+        }<br />
+
+        <ul>
+          <li>Les variables doivent être déclarées le plus près de leur première
+            utilisation. Comme nos fonctions sont courtes, elles apparaissent
+            souvent en première ligne. </li>
+        </ul>
+      </p>
+
+      <!-- the behavior of the div -->
+      <div class="lift:comet?type=Chat"> 
+        Some chat messages
+        <ul>
+          <li>A message</li>
+          <li class="clearable">Another message</li>
+          <li class="clearable">A third message</li>
+        </ul>
+      </div>
+      <div>
+        <form class="lift:form.ajax">
+          <input class="lift:ChatIn" id="chat_in"/>
+          <input type="submit" value="Say Something"/>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

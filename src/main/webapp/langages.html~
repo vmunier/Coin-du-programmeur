@@ -1,0 +1,82 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head><title>Livres</title></head>
+  <body class="lift:content_id=main">
+    <div id="main" class="lift:surround?with=default;at=content">
+      <!-- the behavior of the div -->
+      <h2>Mes langages de programmation préférés</h2>
+      langages classés par ordre de préférence, le premier étant celui que je
+      préfère.
+      courte description avec des points :
+      <h3>Scala</h3>
+      <h3>C</h3>
+      J'ai découvert la programmation avec ce langage. <br />
+      Le C est un langage de "moyen niveau".
+      Il est définitivement plus haut niveau que l'assembleur et offre plusieurs
+      abstractions. Pourtant, une bonne maitrise du C requiert de bien connaitre
+      la gestion de la mémoire d'un ordinateur. 
+      La gestion des pointeurs n'est pas facile à assimiler. <br />
+      Je trouve que coder dans ce langage est fun !
+      J'aime sa rapidité d'exécution.
+      Comprendre les pointeurs et la gestion de la mémoire nous permet de mieux
+      comprendre le fonctionnement de langages de plus haut niveau.
+      En Java par exemple, on comprend tout de suite ce qu'est une référence ou
+      encore ce qu'il se passe lorsqu'on fait un 'new'.
+      La liberté d'écriture qu'offre ce langage.
+      qui le rend dangereux
+      
+
+      
+
+
+      <h3>Java</h3>
+      J'aime 
+      <ul>
+	<li>la grande quantité de bibliothèques disponibles</li>
+	<li>les IDE Java (Eclipse est mon préféré) qui sont super avancés pour
+	ce langage</li>
+	<li>la portabilité du langage; en comparaison le C est portable mais
+	vous allez galérer pour que votre programme C s'exécute partout
+	pareil</li>
+      </ul>
+
+      Je trouve que coder dans ce langage est chiant.
+      Il n'offre aucune liberté d'écriture. 
+      L'avantage est d'avoir des programmes Java qui, grossièrement, se
+      ressemblent tous. Mais en tant que programmeur, ça limite mon plaisir de
+      coder en Java.
+      
+
+      <h3>Python</h3>
+      <b>ce que j'aime dans le langage</b>
+      J'aime lire du code python. <br />
+      Le code Python est souvent très concis. Il n'y a pas de déclaration de
+      types. <br />
+      J'aime aussi l'indentation qui délimite les blocs d'instructions et qui, à
+      mon sens, rend le code plus lisible car il est épuré des différents
+      caractères ( ) { } ; qu'on retrouve dans les langages de la famille
+      C. <br />
+
+      
+      <b>ce que je n'aime pas</b>
+
+      <div class="lift:comet?type=Chat"> 
+        <h3>Commentaires</h3>
+        <ul>
+          <li>A message</li>
+          <li class="clearable">Another message</li>
+          <li class="clearable">A third message</li>
+        </ul>
+      </div>
+      
+      <div>
+        <form class="lift:form.ajax">
+          <input class="lift:ChatIn" id="chat_in"/>
+          <input type="submit" value="Say Something"/>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
+

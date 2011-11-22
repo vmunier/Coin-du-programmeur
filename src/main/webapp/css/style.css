@@ -1,0 +1,17 @@
+.imgBook {
+    /* float: left; indique que l'image se trouve à gauche 
+       margin: 0 6px 6px 0; indique la marge de chaque côté de l'image. 
+       Dans l'ordre, sa donne: 0=marge au dessus de l'image, 6px=marge à droite de l'image,
+       6px=marge sous l'image, 0=marge à gauche de l'image. */
+    /* float: left; */
+    /* margin: 0 6px 6px 0; */
+    width: 500px;
+    height: 500px;
+}
+
+
+b.red{ color: red; }
+
+body {
+    font-size:84%;
+}
