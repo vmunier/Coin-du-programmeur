@@ -1,0 +1,6 @@
+lib_managed/
+project/
+sbt
+sbt-launcher.jar
+simply_lift/
+target/
