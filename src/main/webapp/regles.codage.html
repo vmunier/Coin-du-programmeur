@@ -1,20 +1,21 @@
-s<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
-           "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+ms<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+            "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head><title>Home</title></head>
   <body class="lift:content_id=main">
     <div id="main" class="lift:surround?with=default;at=content">
       <!-- Ça serait bien d'afficher au visteur que les points
-           importants :       <h2>Minimiser le nombre de paramètres d'une fonction</h2>
-           <h2>Éviter les paramètres boolean</h2> afin que ça se présente
-           comme une liste de points importants. 
-           Dans le cas où il souhaite avoir plus d'information sur le
-           point, il pourrait cliquer dessus et ça fera défiler la description.
-           J'ai fini de décrire tous les points importants que je voulais énoncés.
-           Il reste à mettre en forme tous les points pour que le texte soit mieux
-           organisé et peut-être réecrire quelques points qui sont des répétitions de
-           "Coder proprement".
-           -->
+      importants :       <h2>Minimiser le nombre de paramètres d'une fonction</h2>
+      <h2>Éviter les paramètres boolean</h2> afin que ça se présente
+      comme une liste de points importants. 
+      Dans le cas où il souhaite avoir plus d'information sur le
+      point, il pourrait cliquer dessus et ça fera défiler la description.
+      J'ai fini de décrire tous les points importants que je voulais énoncés.
+      Il reste à mettre en forme tous les points pour que le texte soit mieux
+      organisé et peut-être réecrire quelques points qui sont des répétitions de
+      "Coder proprement".
+      -->
+      <script type="text/javascript" src="jquery.js"></script>
       <p>
         Ce sont des règles que j'applique d'une manière général mais qu'il ne faut
         pas suivre à la lettre lorsqu'elles n'ont pas de sens.<br />
@@ -37,21 +38,25 @@ s<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
       
       <h2>Conseils généraux</h2>
       <p>
-        Lisez du code bien écrit, lisez en beaucoup <br />
-        <br />
-        Inspirez vous de codes écrits par des programmeurs expérimentés pour
-        mieux écrire le votre.<br />
-        Observez la longueur des fonctions, retenez les noms qu'ils utilisent
-        pour leurs variables. <br />
-        <br />
-        Si vous utilisez un langage dont la bibliothèque standard est open
-        source, allez lire le code qu'elle renferme. 
-        Il est souvent de très bonne qualité.<br />
-        En lisant le code des bibliothèques de votre langage préféré, vous 
-        aurez des modèles de code bien écrit. De plus, vous comprendrez mieux
-        les fonctions que vous utilisez tous les jours.<br />
-        Par exemple, pour le langage Java, j'ai commencé en lisant le code des
-        collections ArrayList, HashMap..
+        <a href="#" onclick="$('#lireCode').slideToggle('fast')">Lisez du code
+          bien écrit, lisez en beaucoup >></a> <br />
+        <div id="lireCode">        
+          <br />
+          Inspirez vous de codes écrits par des programmeurs expérimentés pour
+          mieux écrire le votre.<br />
+          Observez la longueur des fonctions, retenez les noms qu'ils utilisent
+          pour leurs variables. <br />
+          <br />
+          Si vous utilisez un langage dont la bibliothèque standard est open
+          source, allez lire le code qu'elle renferme. 
+          Il est souvent de très bonne qualité.<br />
+          En lisant le code des bibliothèques de votre langage préféré, vous 
+          aurez des modèles de code bien écrit. De plus, vous comprendrez mieux
+          les fonctions que vous utilisez tous les jours.<br />
+          Par exemple, pour le langage Java, j'ai commencé en lisant le code des
+          collections ArrayList, HashMap...
+        </div>
+        <a href="#" onclick="$('#lireCode').slideToggle('fast')">Fermer</a> <br />
       </p>
       <h2>Nommage</h2>
       <p>
@@ -117,7 +122,7 @@ s<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
         <!-- Souvent il suffit d'écrire correctement puisque en aglais les -->
         <!-- adjectifs se placent avant le nom.  -->
       </p>
-      <h3>Groupe nomniaux pour les classes, verbe pour les méthodes</h3>
+      <h3>Groupe nominaux pour les classes, verbe pour les méthodes</h3>
       <p>
         Les noms de classes doivent être des groupes nominaux (Warrior,
         LinkedList).

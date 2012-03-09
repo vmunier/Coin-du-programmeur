@@ -26,11 +26,17 @@ class Boot {
         Menu.i("Bashrc") / "bashrc.configuration",
         Menu.i("Emacs") / "emacs.configuration",
         Menu.i("Eclipse") / "eclipse.configuration"),      
-      Menu.i("Du code clair") / "regles.codage", // bonnes pratiques 
+      Menu.i("Du code clair") / "regles.codage" submenus (
+        Menu.i("Nommage") / "nommage",
+	Menu.i("Les fonctions") / "fonctions",
+	Menu.i("Les commentaires") / "commentaires",
+	Menu.i("Traitement des erreurs") / "traitement.erreurs",
+	Menu.i("Mise en forme") / "mise.en.forme"
+      ), // bonnes pratiques 
       Menu.i("Langages") / "langages",
       Menu.i("Livres") / "livres",
       Menu.i("Outils") / "outils",
-      
+      Menu.i("Test") / "test",
       
       // more complex because this menu allows anything in the
       // /static path to be visible

@@ -1,0 +1,44 @@
+
+            "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head><title>Home</title></head>
+  <body class="lift:content_id=main">
+    <div id="main" class="lift:surround?with=default;at=content">
+
+      <h2>Les commentaires</h2>
+      <img src="images/nutella.jp²g" />
+      <h3>Les commentaires doivent apporter une réelle information</h3>
+      <p>
+        Les commentaires doivent être utilisés pour décrire ce qu'il est difficile
+        d'exprimer uniquement avec du code.<br />
+        Ils doivent être utilisés pour exprimer des choix, des intentions.<br />
+        <br />
+        <ul>
+          <li> Les commentaires ne doivent surtout pas répéter ce que dit le code</li>
+          <li>Les commentaires encombrent le code</li>
+          <li>Seul le code lui-même dit la vérité</li>
+          <li>Sauf si vous écrivez une API publique, ne surtout pas rajouter des
+            commentaires redondants juste pour générer une javadoc complète. </li>
+          <li>Un commentaire obsolète est une plaie qui ment et désinforme le
+            programmeur</li>
+        </ul>
+      </p>
+
+      <!-- the behavior of the div -->
+      <div class="lift:comet?type=Chat"> 
+        Some chat messages
+        <ul>
+          <li>A message</li>
+          <li class="clearable">Another message</li>
+          <li class="clearable">A third message</li>
+        </ul>
+      </div>
+      <div>
+        <form class="lift:form.ajax">
+          <input class="lift:ChatIn" id="chat_in"/>
+          <input type="submit" value="Say Something"/>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

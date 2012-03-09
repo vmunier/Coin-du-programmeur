@@ -1,0 +1,70 @@
+ms<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+            "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head><title>Home</title></head>
+  <body class="lift:content_id=main">
+    <div id="main" class="lift:surround?with=default;at=content">
+
+      <h2>Mise en forme</h2>
+      <img src="images/coeur-se-livre.jpg" /> <br />
+      <h3>méthodes appelantes placées au dessus des méthodes appelées</h3>
+      positionnement des méthodes dans une classe :
+      <ul>
+        <li>Les méthodes appelantes doivent être placées au dessus des méthodes
+          appelées
+          <!-- C'est tout l'inverse des habitudes d'un programmeur C. -->
+        </li>
+        <li>
+          La méthode appelée doit être placée le plus proche possible de son
+          premier appel
+        </li>
+      </ul>
+      Bien sûr, ce n'est pas toujours possible. Par exemple, dans le cas où deux
+      méthodes s'appellent mutuellement .<br />
+      Cette règle de mise en forme n'est pas importante mais j'essai de la
+      respecter car elle apporte un confort de lecture.<br />
+      On lis l'enchainement des appels d'une méthode du haut vers le bas,
+      des concepts de haut niveau vers les détails de l'implémentation.<br />
+      <p>
+        public V get(Object key) {<br />
+        <!--    &nbsp; : non breackable space  -->
+        &nbsp;&nbsp; if (key == null)<br />
+        &nbsp;&nbsp;&nbsp;&nbsp; return getForNullKey();<br />
+        &nbsp;&nbsp; Entry&lt;K,V&gt; e = table[indexFor(hash, table.length)];<br />
+        &nbsp;&nbsp; return e.value;<br />
+        }<br />
+        <br />
+        private V getForNullKey() {<br />
+        ...<br />
+        }<br />
+        <br />
+        public V getDefault {<br />
+        &nbsp;&nbsp; return getForNullKey(); <br />
+        }<br />
+
+        <ul>
+          <li>Les variables doivent être déclarées le plus près de leur première
+            utilisation. Comme nos fonctions sont courtes, elles apparaissent
+            souvent en première ligne. </li>
+        </ul>
+      </p>
+      
+      <!-- the behavior of the div -->
+      <div class="lift:comet?type=Chat"> 
+        Some chat messages
+        <ul>
+          <li>A message</li>
+          <li class="clearable">Another message</li>
+          <li class="clearable">A third message</li>
+        </ul>
+      </div>
+      
+      <div>
+        <form class="lift:form.ajax">
+          <input class="lift:ChatIn" id="chat_in"/>
+          <input type="submit" value="Say Something"/>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

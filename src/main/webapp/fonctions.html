@@ -1,0 +1,108 @@
+ms<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+            "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head><title>Home</title></head>
+  <body class="lift:content_id=main">
+    <div id="main" class="lift:surround?with=default;at=content">
+
+      <h2>Les fonctions</h2>
+      <h3>Les fonctions doivent être courtes</h3>
+      <p>
+        La première règle d'écriture d'une fonction est qu'elle doit être courte.<br />
+        La deuxième règle d'écriture d'une fonction  
+        <strong>est qu'elle doit être courte.</strong><br />
+
+        <!-- image du savon fight club, c'est important d'ajouter un peu de fun
+             dans un article :) -->
+        <img src="images/fight.club.jpeg" />
+        <br />
+        La longueur d'une fonction varie d'un langage de programmation à l'autre.<br />
+        En C, nous éviterons d'avoir des fonctions de plus de 60 lignes, tandis
+        qu'en Java ça sera 30 et en python 20.
+      </p>
+      <h3>Une fonction doit contenir des instructions du même niveau
+        d'abstraction</h3>
+      <p>
+        Une même fonction ne doit pas contenir à la fois un appel de haut niveau comme
+        launchGame() et un appel de bas niveau comme "abc".substring(2,3) .<br />
+        Les détails de l'implémentation doivent être isolés dans leur propre
+        fonction.<br />
+        Plus on descend dans les appels de fonctions plus on s'approche des
+        concepts de bas niveaux.
+      </p>
+      <h3>Indicateurs pour extraire du code et créer une nouvelle fonction</h3>
+      <p>
+        <ul>
+          <li>vous observez des lignes de code redondantes</li>
+          <li>la fonction possède un niveau d'imbrication supérieur à 2 (par
+            exemple trois if imbriqués)</li>
+          <li>la fonction est décomposée en sections, comme déclarations,
+            initialisations, actions. Une fonction ne faisant qu'une seule chose ne
+            peut pas être décomposée en sections.</li>
+          <li>une fonction contient plus de 3 variables locales.</li>
+        </ul>
+      </p>
+      <h2>Paramètres de fonctions</h2>
+      <h3>Minimiser le nombre de paramètres d'une fonction</h3>      
+      <p>Une fonction ayant peu de paramètres est plus facile à utiliser qu'une
+        fonction qui en possède beaucoup.<br />
+        <br />
+        Le must est d'utiliser des fonctions qui ne prennent aucun argument. <br />
+        Viennent ensuite les fonctions à un argument puis à deux arguments.<br />
+        Les fonctions recevant trois arguments ou plus doivent avoir une bonne
+        raison d'exister.<br />
+        <br />
+        Comparaison de deux signatures :<br />
+        new Circle(double x, double y, double radius)<br />
+        new Circle(Point center, double radius) <br />
+        <br />
+        La deuxième déclaration est préférable à la première.<br />
+        x et y doivent être liés dans une classe Point. <br />
+      </p>
+      <h3>Techniques pour diminuer le nombre de paramètres de méthodes :</h3>
+      <p>
+        <ul>
+          <li>Passer des paramètres au constructeur qui seront stockés en variable de
+            classe</li>
+          <li>Créer une classe pour regrouper les variables faisant parti d'un
+            même concept</li>
+        </ul>
+      </p>
+      <h3>Éviter les paramètres boolean</h3>
+      <p>
+        Un paramètre boolean complique inutilement la signature d'une méthode et
+        proclame à l'environnement extérieur qu'elle fait deux choses :<br />
+        La méthode réalise une chose lorsque l'argument vaut true, une autre
+        lorsqu'il vaut false.<br />
+        Il est préférable de remplacer cette fonction en deux sous-programmes qui
+        ne prennent pas de paramètre boolean :<br />
+        l'un correspond au bloc du if (true) et l'autre au else.<br />
+        Ces deux sous-programmes sont maintenant appelées par l'appelant de la
+        méthode initial.
+      </p>
+
+      <h3>Les variables d'une classe doivent être utilisées dans le maximum de
+        méthodes</h3>
+      <p>
+        Si une variable de classe n'est utilisée que dans quelques méthodes, il y
+        a de forte chance pour qu'elles doivent être réunis dans une autre classe.
+      </p>
+
+      <!-- the behavior of the div -->
+      <div class="lift:comet?type=Chat"> 
+        Some chat messages
+        <ul>
+          <li>A message</li>
+          <li class="clearable">Another message</li>
+          <li class="clearable">A third message</li>
+        </ul>
+      </div>
+      <div>
+        <form class="lift:form.ajax">
+          <input class="lift:ChatIn" id="chat_in"/>
+          <input type="submit" value="Say Something"/>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

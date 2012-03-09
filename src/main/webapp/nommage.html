@@ -1,0 +1,113 @@
+ms<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+            "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head><title>Home</title></head>
+  <body class="lift:content_id=main">
+    <div id="main" class="lift:surround?with=default;at=content">
+      <h2>Nommage</h2>
+        <img src="images/my-name-is.jpg" /> <br />
+	<br />
+      <p>
+        Trouver des noms descriptifs et à la fois succinct est une tâche
+        difficile.<br />
+        Vous devez faire l'effort de chercher des noms appropriés.<br />
+        Au début vous serez moins productif car vous passerez beaucoup de temps à
+        chercher. Mais à force d'entraînement, vous irai de plus en plus en vite
+        et votre travail sera récompensé d'un code plus facile à lire, à
+        comprendre et donc plus facile à utiliser et à mettre à jour.
+      </p>
+      <h3>Des noms descriptifs</h3>
+      <p>
+        <ul>
+          <li>
+            Plus un élément (variable, fonction, module...) est local, moins son nom a
+            de l'importance car il peut être plus facilement déduit de son
+            contexte.<br />
+            Plus un élément est global, plus son nom doit être explicite car il est
+            plus difficile de déduire son action du contexte.<br />
+            Ça ne veut pas dire qu'un nom explicite pour une variable local n'est pas
+            important mais plutôt qu'on peut se permettre de passer peu de temps à
+            nommer une variable qui ne sera utilisé que dans les 10 lignes suivants
+            sa déclaration.<br />
+            À l'inverse, il faudra passer plus de temps à nommer une
+            méthode qui peut potentiellement être appelée n'importe où dans le
+            projet.<br />
+            <br />
+          </li>
+          <li>
+            Un nom de variable court permet une lecture plus rapide et permet de
+            se concentrer sur la structure logique. <br />
+            Un nom plus long offre souvent une meilleur description.<br />
+            <br />
+            Une bonne longueur pour un nom varie grossièrement entre 6 et 16
+            charactères. <br />
+            Si vous trouvez dans votre code <strong>beaucoup</strong> de noms
+            qui sortent de ces limites, vous pouvez vous demandez si certains
+            sont assez clairs dans le cas où ils sont courts ou bien si d'autres
+            ne pourraient pas être raccourcis dans le cas opposé.
+          </li>
+        </ul>
+      </p>
+      <h3>Des noms prononçables</h3>
+      <p>
+        Évitez la codification ou des notations spécial comme la notation
+        hongroise.
+      </p>
+      <h3>La précision au début du nom</h3>
+      <p>
+        On lit de gauche à droite, on doit avoir l'information le plus tôt possible donc
+        le plus à gauche.<br />
+        Les noms LinkedList et ArrayList respectent cette règle.<br />
+        Nous aurions pu choisir ListLinked et ListArray qui ont une
+        qualité :<br />
+        ils offrent une belle symétrie et on s'aperçoit facilement qu'ils
+        font parti d'un même concept, tous les deux des List.<br />
+        Cependant, la réele information qui nous intéresse est de savoir si
+        c'est une liste chainée ou bien un tableau dynamique. La précision
+        doit donc se placer en tête du groupe nominal. <br />
+        Si nous avons besoin de plus d'informations alors nous lisons le
+        reste des mots sur la droite pour connaitre le contexte.<br />
+        <!-- Souvent il suffit d'écrire correctement puisque en aglais les -->
+        <!-- adjectifs se placent avant le nom.  -->
+      </p>
+      <h3>Groupe nominaux pour les classes, verbe pour les méthodes</h3>
+      <p>
+        Les noms de classes doivent être des groupes nominaux (Warrior,
+        LinkedList).
+        Évitez les noms qui sont aussi des verbes pour nommer vos classes
+        (Play, Drink, Wash).<br />
+        Les noms de méthodes doivent commencer par un verbe à l'impératif
+        (getName, writeSentence). 
+      </p>
+      <h3>Un seul mot pour décrire la même chose</h3>
+      <p>
+        Lorsque nous lisons un mot déjà lu ailleurs, nous pouvons rapidement
+        faire mentalement le lien et comprendre de quoi il s'agit.<br />
+        Si vous manipulez une même instance de classe dans différentes
+        méthodes, essayez de donnez le même nom de paramètre pour ces
+        méthodes qui recevront l'instance.
+        <br /><br />
+        Aussi, évitez les synonymes comme start et begin ou encore burn et
+        fire.<br />
+        Si vous possèdez une méthode fire, utilisez ce nom partout dans le
+        reste du programme. <br />
+      </p>
+
+      <!-- the behavior of the div -->
+      <div class="lift:comet?type=Chat"> 
+        Some chat messages
+        <ul>
+          <li>A message</li>
+          <li class="clearable">Another message</li>
+          <li class="clearable">A third message</li>
+        </ul>
+      </div>
+      <div>
+        <form class="lift:form.ajax">
+          <input class="lift:ChatIn" id="chat_in"/>
+          <input type="submit" value="Say Something"/>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

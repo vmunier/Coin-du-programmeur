@@ -1,0 +1,41 @@
+ms<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+            "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head><title>Home</title></head>
+  <body class="lift:content_id=main">
+    <div id="main" class="lift:surround?with=default;at=content">
+
+      <h2>Traitement des erreurs</h2>
+
+      <img src="images/funambule.jpg" /> <br />
+
+      <p>
+        Il est très important que le code soit robuste.
+        Ce n'est pas une raison pour rendre illisible le reste du code.<br />
+        Le code de traitement des erreurs doit être séparé de la logique.<br />
+        Autant que possible, les lignes décrivant la logique ne doivent pas être
+        entrelacées de tests d'erreurs 
+        <!-- (pex : if (key == null) logger.debug("The key should not be null") ) -->.<br />
+        Les exceptions permettent de gérer ce problème plus facilement.
+      </p>
+
+
+
+<!-- the behavior of the div -->
+      <div class="lift:comet?type=Chat"> 
+        Some chat messages
+        <ul>
+          <li>A message</li>
+          <li class="clearable">Another message</li>
+          <li class="clearable">A third message</li>
+        </ul>
+      </div>
+      <div>
+        <form class="lift:form.ajax">
+          <input class="lift:ChatIn" id="chat_in"/>
+          <input type="submit" value="Say Something"/>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
